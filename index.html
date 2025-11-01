@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raniele Santos - Nail Designer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Great+Vibes&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Variáveis de Cor (Tema Preto e Dourado) --- */
+        :root {
+            --cor-fundo-principal: #121212;
+            --cor-fundo-secundaria: #1e1e1e;
+            --cor-dourado: #D4AF37;
+            --cor-dourado-brilho: #f4e04d;
+            --cor-texto-principal: #f5f5f5;
+            --cor-texto-secundario: #aaaaaa;
+        }
+
+        /* --- Reset Básico --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cor-fundo-principal);
+            color: var(--cor-texto-principal);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cor-dourado);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--cor-dourado);
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: var(--cor-dourado-brilho);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--cor-dourado), #b88a00);
+            color: #000;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(45deg, var(--cor-dourado-brilho), var(--cor-dourado));
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- Header (AGORA É O BANNER) --- */
+        header {
+            width: 100%;
+            background-color: #000;
+        }
+
+        /* CSS DO BANNER "RANIELE SANTOS" - MODIFICADO 
+        */
+        .nail-designer-banner {
+            background-color: #000000;
+            padding: 20px 20px; /* Padding lateral ajustado para 20px */
+            text-align: center; /* Centralizado */
+            width: 100%;
+            box-sizing: border-box; 
+            overflow: hidden; 
+        }
+
+        .nail-designer-banner .banner-name {
+            font-family: 'Great Vibes', cursive;
+            color: #FFFFFF;
+            font-size: 2rem; 
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .nail-designer-banner .banner-divider {
+            width: 100px; 
+            height: 2px;
+            background: linear-gradient(to right, #ae864b, #f3e0b2, #ae864b);
+            /* Margem 'auto' centraliza a linha, 15px de espaço abaixo */
+            margin: 3px auto 15px auto; 
+            border: none;
+        }
+
+        .nail-designer-banner .banner-title {
+            font-family: 'Raleway', sans-serif;
+            color: #FFFFFF;
+            font-size: 0.9rem; 
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin: 0; /* Margem superior removida */
+        }
+        /* --- Fim do CSS do Banner --- */
+
+
+        /* --- Hero Section (BANNER ANTIGO) --- */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            color: var(--cor-texto-secundario);
+        }
+
+
+        /* --- Sections Geral --- */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--cor-dourado);
+            margin: 20px auto 0;
+        }
+
+        /* --- Serviços --- */
+        #servicos {
+            background-color: var(--cor-fundo-secundaria);
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .servico-card {
+            background-color: var(--cor-fundo-principal);
+            padding: 30px;
+            border: 1px solid #333;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .servico-card:hover {
+            border-color: var(--cor-dourado);
+            transform: translateY(-5px);
+        }
+
+        .servico-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .price {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--cor-dourado);
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* --- Agendamento (Formulário) --- */
+        #agendamento {
+            background-color: var(--cor-fundo-principal);
+        }
+
+        .agendamento-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+        }
+
+        .agendamento-info, .agendamento-form {
+            flex: 1 1 400px;
+        }
+
+        .agendamento-form form {
+            background-color: var(--cor-fundo-secundaria);
+            padding: 40px;
+            border-radius: 4px;
+            border: 1px solid #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--cor-dourado);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #121212;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--cor-dourado);
+        }
+
+        ::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #000;
+            padding: 50px 0 20px;
+            text-align: center;
+            border-top: 2px solid var(--cor-dourado);
+        }
+
+        /* Logo do rodapé */
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--cor-texto-principal);
+        }
+        .footer-logo span {
+            color: var(--cor-dourado);
+        }
+        
+        .footer-info {
+            margin-bottom: 30px;
+            color: var(--cor-texto-secundario);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            /* Ajusta o tamanho do banner no header */
+            .nail-designer-banner .banner-name { font-size: 3rem; } 
+            .nail-designer-banner .banner-title { letter-spacing: 4px; }
+            .nail-designer-banner .banner-divider { width: 100px; } /* Mantém 100px centralizado */
+            
+            /* Ajusta o tamanho do hero antigo */
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nail-designer-banner">
+          <h1 class="banner-name">Raniele Santos</h1>
+          <div class="banner-divider"></div>
+          <p class="banner-title">NAIL DESIGNER</p>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container hero-content">
+            <h1>Unhas que <br>Inspiram Luxo</h1>
+            <p>Especialista em alongamentos, nail art e cuidados premium. Reserve seu momento de beleza.</p>
+            <a href="#agendamento" class="btn-gold">Agendar Horário</a>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços Premium</h2>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <h3>Alongamento</h3>
+                    <p>Molde F1: R$ 100,00<P>
+                    <P>Gel na Tips: R$ 110,00</P>
+                    <P>Banho de Gel: R$ 80,00</P>
+                    <p>Blindagem: R$ 60,00</p>
+                    <p>Postiça Realista: R$ 55,00</p>
+                    <p>Esmaltação em Gel: R$ 50,00</p>
+                
+                
+                    <span class="price"></span>
+                </div>
+                <div class="servico-card">
+                    <h3>Nail Arts</h3>
+                    <p>Encapsulamento: R$ 5,00</p>
+                    <P>Francesinha: R$ 5,00</P>
+                    <p>Adesivo: R$ 2,00</p>
+                    <p>Pedraria: R$ 3,00</p>
+                    <p>Outros: R$ 1,50</p>
+
+                    <span class="price">Valores Unitario</span>
+                </div>
+                <div class="servico-card">
+                    <h3>Manutenção</h3>
+                    <p>Gel na Tips: R$ 80,00</p>
+                    <p>Molde F1: R$ 70,00</p>
+
+                    <span class="price"></span>
+                </div>
+                <div class="servico-card">
+                    <h3>Outros</h3>
+                    <p>Remoção: R$ 30,00</p>
+                    <p>Reposição de Unha UN: R$ 10,00</p>
+                    <p>Troca de Formato: R$ 20,00</p>
+
+                    <span class="price"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agendamento">
+        <div class="container">
+            <h2 class="section-title">Agende seu Horário</h2>
+            <div class="agendamento-wrapper">
+                <div class="agendamento-info">
+                    <h3>Informações Importantes</h3>
+
+                    <p>Para confirmar seu horario, é necessario</p>
+                    <p>o pagamento de 30% do valor como sinal.</p>
+                    <P>O saldo remanescente é pago no momento do atendimento.</p>
+                    <br>
+
+                    <p>✨ Atendemos apenas com hora marcada.</p>
+
+                    <p>✨ Em caso de desistencia,cancelamento ou nao comparecimento. O sinal não sera devolvido.</p>
+
+                    <p>✨ Tolerâcia de atraso é de 15 minutos. Ápos isso, o atendimento sera cancelado automaticamente.</p>
+
+                    <p>✨ Agendamentos apenas com o envio do comprovante de pagamento do sinal.</p>
+
+                    <p>✨ Para reagendamentos, solicitamos a gentileza de nos comunicar com, no mínimo, 48 horas de antecedência. Caso a notificação ocorra fora deste prazo, o valor pago como sinal não será reembolsável</p>
+                          
+                    <span class="price">Obrigado pela compreensão</span>
+                    <br>
+
+                    <h4 style="color: var(--cor-dourado)">Horário de Funcionamento:</h4>
+                    <p>Terça a Sábado: 09h às 19h</p>
+                </div>
+
+                <div class="agendamento-form">
+                    <form id="form-agendamento">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo:</label>
+                            <input type="text" id="nome" required placeholder="Seu nome">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp:</label>
+                            <input type="tel" id="whatsapp" required placeholder="(XX) 9XXXX-XXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="servico">Selecione o Serviço:</label>
+                            <select id="servico" required>
+                                <option value="">Escolha uma opção...</option>
+                                <option value="Alongamento">Molde F1 - R$ 100,00</option>
+                                <option value="Alongamento">Gel na Tips - R$ 110,00</option>
+                                <option value="Alongamento">Banho de Gel - R$ 80,00</option>
+                                <option value="Alongamento">Blindagem - R$ 60,00</option>
+                                <option value="Alongamento">Postiça Realista - R$ 55,00</option>
+                                <option value="Alongamento">Esmaltação em Gel - R$ 50,00</option>
+                                
+                                <option value="Nail Arts">Encapsulada (UN) - R$ 5,00</option>
+                                <option value="Nail Arts">Francesinha (UN) - R$ 5,00</option>
+                                <option value="Nail Arts">Adesivo (UN) - R$ 2,00</option>
+                                <option value="Nail Arts">Pedraria (UN) - R$ 3,00</option>
+                                <option value="Nail Arts">Outros (UN) - R$ 1,50</option>
+
+                                <option value="Manutenção">Gel na Tips - R$ 80,00</option>
+                                <option value="Manutenção">Molde F1 - R$ 70,00</option>
+
+                                <option value="Outros">Remoção - R$ 30,00</option>
+                                <option value="Outros">Reposição de Unha (UN) - R$ 10,00</option>
+                                <option value="Outros">Troca de Formato - R$ 20,00</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="data">Data Desejada:</label>
+                            <input type="date" id="data" required min="2023-01-01">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="horario">Horário Preferencial:</label>
+                            <select id="horario" required>
+                                <option value="">Selecione...</option>
+                                <option value="09:00">09:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-gold" style="width: 100%;">Confirmar Solicitação</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Raniele <span>Santos</span></div>
+            <div class="footer-info">
+                <p>Rua Sebastião Panta, Caminho do Mel</p>
+                <p>WhatsApp: (75) 99833-2045</p>
+                <p>Instagram: @studio_ranielesantos</p>
+            </div>
+            <p class="copyright">© 2025 Pamponet Dev. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Script Simples para Agendamento ---
+
+        // 1. Define a data mínima do input 'date' para HOJE
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('data').setAttribute('min', today);
+
+        // 2. Intercepta o envio do formulário
+        document.getElementById('form-agendamento').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const nome = document.getElementById('nome').value;
+            const servico = document.getElementById('servico').value;
+            const data = document.getElementById('data').value;
+            const horario = document.getElementById('horario').value;
+
+            const dataFormatada = new Date(data).toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+
+            // Redirecionar para o WhatsApp com mensagem pronta
+            const whatsappNumber = "75998332045"; // Número do rodapé
+            const texto = `Olá! Gostaria de agendar: ${servico} para o dia ${dataFormatada} às ${horario}. Meu nome é ${nome}.`;
+            const msgFormatada = encodeURIComponent(texto);
+            
+            window.open(`https://wa.me/${whatsappNumber}?text=${msgFormatada}`, '_blank');
+            
+            this.reset();
+        });
+    </script>
+</body>
+</html>
