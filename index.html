@@ -483,14 +483,15 @@
             const dataFormatada = new Date(data).toLocaleDateString('pt-BR', {timeZone: 'UTC'});
 
             // Redirecionar para o WhatsApp com mensagem pronta
-            const whatsappNumber = "75998332045"; // Número do rodapé
+            const whatsappNumber = "75997102224"; // Número do rodapé
             const texto = `Olá! Gostaria de agendar: ${servico} para o dia ${dataFormatada} às ${horario}. Meu nome é ${nome}.`;
             const msgFormatada = encodeURIComponent(texto);
             
-            window.open(`https://wa.me/${whatsappNumber}?text=${msgFormatada}`, '_blank');
+            window.open(`https://wa.me/${75997102224}?text=${msgFormatada}`, '_blank');
             
             this.reset();
         });
     </script>
 </body>
+
 </html>
